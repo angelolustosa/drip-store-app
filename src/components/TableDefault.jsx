@@ -1,57 +1,65 @@
-import React from "react";
-import { Table } from "react-bootstrap";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { Container, Table } from "react-bootstrap";
 
 export const TableDefault = (props) => {
+  const [data, setData] = useState([]);
 
-  const loadColumns = () => {
-    console.log('columns', props.columns)
-     if(props.columns) {
-      props.columns.map(column => <th>column</th>)
+  useEffect(() => {
+
+    buscarUsuarios();
+    console.log(`Tabela recarregou com dados da url ${props.url}`);
+  }, [props.url]);
+
+  const buscarUsuarios = async () => {
+    try {
+      const response = await axios.get(props.url);
+      response.data.forEach(element => {
+        /* delete element.address */
+        /* delete element.company */
+      });
+      setData(response.data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
     }
+  };
+
+  const getValuesObjectNested = object => {
+    return Object.values(object).map(value => {
+      if (typeof value === 'object') {
+        return getValuesObjectNested(value)
+      }
+      return value
+    }).join(', ')
   }
 
-  const loadData = () => {
-    props.data.map(item =>  <tr>
-      <td>{item.id}</td>
-      <td>{item.nome}</td>
-      <td>{item.desconto}</td>
-    </tr>)
-  }
+  const columns = data.length > 0 ? Object.keys(data[0]).map((column, index) => <th key={index}>{column}</th>) : [];
+
+  {/* <td key={indexColumn}>{JSON.stringify(row[column])}</td> */ }
   return (
-    <Table striped bordered hover>
-      <thead>
-        <tr>
-          {/* {loadColumns()} */}
-          {Object.keys(props.data[0]).map(column => <th>{column}</th>)}
-          {console.log(Object.keys(props.data[0]))}
-        </tr>
-      </thead>
-      <tbody>
-        {/* {props.data.map(item =>  <tr>
-      <td>{item._id}</td>
-      <td>{item.nome}</td>
-      <td>{item.desconto}</td>
-    </tr>)} */}
-
-    
-        {/* <tr>
-          <td>1</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td colSpan={2}>Larry the Bird</td>
-          <td>@twitter</td>
-        </tr> */}
-      </tbody>
-    </Table>
+    <Container>
+      <Table striped bordered hover>
+        <thead>
+          <tr>
+            {columns}
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((row, indexRow) => (
+            <tr key={indexRow}>
+              {Object.keys(data[0]).map((column, indexColumn) => {
+                //console.log(Object.keys(row[column]), row[column])
+                if (typeof row[column] === 'object') {
+                  //return <td key={indexColumn}>{JSON.stringify(row[column])}</td>
+                  return <td key={indexColumn}>{getValuesObjectNested(row[column])}</td>
+                } else {
+                  return <td key={indexColumn}>{row[column]}</td>
+                }
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </Table>
+    </Container>
   );
 };
