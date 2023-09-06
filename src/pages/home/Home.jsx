@@ -1,6 +1,6 @@
 import React from 'react'
-import { MenuBar } from '../../components/header/MenuBar'
 import { Footer } from '../../components/footer/Footer'
+import { MenuBar } from '../../components/header/MenuBar'
 
 export const Home = () => {
   return (

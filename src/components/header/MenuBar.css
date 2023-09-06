@@ -1,0 +1,35 @@
+.titulo {
+    align-items: center;
+    color: #c92071;
+    display: flex;
+    font-family: Inter, sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    height: 60px;
+    line-height: 44px;
+    margin-left: 0.55vw;
+    white-space: nowrap;
+}
+
+.btn-entrar {
+    background-color: #c92071;
+    width: 7.87vw;
+    border: none;
+    border-radius: 8px;
+    color: #f5f5f5;
+    cursor: pointer;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    height: 40px;
+}
+.cadastrese {
+    font-family: Inter, sans-serif;
+    /* text-decoration: none; */
+    color: #474747;
+}
+
+/* .menubar {
+    padding-top: 2em;
+    padding-bottom: 2em;
+} */
