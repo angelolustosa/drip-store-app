@@ -1,0 +1,17 @@
+.nav-underline .nav-link.active,
+.nav-underline .show>.nav-link {
+    font-weight: 700;
+    color: #c92071;
+    border-bottom-color: currentcolor;
+}
+
+/* .nav-underline .nav-link {
+    text-decoration: none;
+    padding-right: 0;
+    padding-left: 0;
+    border-bottom: var(--bs-nav-underline-border-width) solid transparent;
+}
+ */
+.nav-link {
+    color: #c92071 !important
+}

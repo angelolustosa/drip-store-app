@@ -1,0 +1,37 @@
+.col-6.col-md > h5 {
+    font-size: 18px;
+    margin-bottom: 2em;
+}
+
+.text-logo {
+    font-size: 33px;
+    font-weight: 600;
+    margin-left: 8px;
+}
+
+.footer {
+    align-items: center;
+    background-color: #1f1f1f;
+    color: #fff;
+    font-family: Inter, sans-serif;
+    font-style: normal;
+    /* width: 100vw; */
+}
+
+ul > li > a > P {
+    color: #b3b0b0;
+    font-size: 15px;
+}
+
+.social-icons {
+    gap: 2rem;
+    display: flex;
+    margin-top: 3em;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-weight: 400;
+    font-size: 11px;
+    color: #fff;
+}

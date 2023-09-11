@@ -1,0 +1,72 @@
+.card-container {
+    background-color: #FFFFFF;
+}
+
+.card-colecao {
+    padding: 1em 0em 12em 1em;
+    background: white;
+    border-color: white;
+    border-radius: 8px;
+    height: 256px;
+    width: 256px;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.categoria {
+    color: #8F8F8F;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 24px;
+    letter-spacing: 0.75px;
+    font-family: Inter, sans-serif;
+}
+
+.produto {
+    color: #474747;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 38px;
+    letter-spacing: 0.75px;
+    font-family: Inter, sans-serif;
+}
+
+.preco-antes {
+    color: #8F8F8F;
+    text-decoration: line-through;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 38px;
+    letter-spacing: 0.75px;
+    font-family: Inter, sans-serif;
+    padding-right: 0.5em;
+}
+
+.preco-depois {
+    color: #1F1F1F;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 38px;
+    letter-spacing: 0.75px;
+    font-family: Inter, sans-serif;
+}
+
+.container-off{
+
+}
+
+.off {
+    align-items: center;
+    background-color: #e7ff86;
+    border-radius: 29px;
+    color: #474747;
+    display: flex;
+    font-weight: 700;
+    height: 32px;
+    justify-content: center;
+    padding: 5px 15px;
+    position: relative;
+    white-space: nowrap;
+    width: 96px;
+    z-index: 3;
+}

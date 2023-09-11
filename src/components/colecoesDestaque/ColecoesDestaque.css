@@ -1,0 +1,68 @@
+.circle {
+    width: 104px;
+    height: 104px;
+    background: white;
+    -moz-border-radius: 52px;
+    -webkit-border-radius: 52px;
+    border-radius: 52px;
+    padding-top: 1em;
+}
+
+.colecoes-destaque {
+    padding: 100px 0 20px;
+    font-family: Inter, sans-serif;
+}
+
+p {
+    color: #474747
+}
+
+.card {
+    background: #d8e3f2;
+    border-color: #d8e3f2;
+    border-radius: 8px;
+    height: 251px;
+    justify-content: space-around;
+    padding: 34px 30px;
+    width: 405px;
+
+    background-repeat: no-repeat;
+    /* background-position: right bottom; */
+    background-position: right;
+    background-position-x: 10em;
+    background-position-y: -24px;
+}
+
+.off {
+    align-items: center;
+    background-color: #e7ff86;
+    border-radius: 29px;
+    color: #474747;
+    display: flex;
+    font-weight: 700;
+    height: 32px;
+    justify-content: center;
+    padding: 5px 15px;
+    position: relative;
+    white-space: nowrap;
+    width: 96px;
+    z-index: 3;
+}
+
+.titulo-card {
+    color: #1f1f1f;
+    font-family: Inter,sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    height: 72px;
+    letter-spacing: 1px;
+    line-height: 36px;
+    margin: 10px 0 20px;
+    width: 172px;
+}
+
+/* .tenis-colecao {
+    background-position-x: 31px;
+    background-position-y: -9px;
+} */
