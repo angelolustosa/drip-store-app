@@ -7,10 +7,10 @@ import { ColecoesDestaque } from '../../components/colecoesDestaque/ColecoesDest
 export const Home = () => {
   return (
     <div>
-      <MenuBar />
+      {/* <MenuBar /> */}
       <Slider />
       <ColecoesDestaque />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }

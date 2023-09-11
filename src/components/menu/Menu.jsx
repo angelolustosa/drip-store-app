@@ -1,12 +1,15 @@
 import React from 'react'
 import { Nav } from 'react-bootstrap'
 import './Menu.css'
+import { useLocation } from 'react-router-dom';
 
 export const Menu = () => {
+    const location = useLocation();
+
     const menus = [
         {
             nome: 'Home',
-            path: '/home'
+            path: '/'
         }, {
             nome: 'Produtos',
             path: '/produtos'
@@ -17,25 +20,18 @@ export const Menu = () => {
             nome: 'Meus Pedidos',
             path: '/meus-pedidos'
         }]
+
     return (
         <div /* className='d-flex justify-content-center' */>
-            <Nav variant="underline" defaultActiveKey="/home">
-                {menus.map(m =>
+            <Nav variant="underline" /* defaultActiveKey="/" */>
+                {/* <Nav.Item>
+                    <Nav.Link href="/">Home</Nav.Link>
+                </Nav.Item> */}
+                {menus.map((m, index) =>
                 (<Nav.Item>
-                    <Nav.Link href={m.path}>{m.nome}</Nav.Link>
+                    <Nav.Link name={m.nome} className={`${location.pathname === m.path ? 'active' : ''}`}/* eventKey={`link-${index + 1}`} */ href={m.path}>{m.nome}</Nav.Link>
                 </Nav.Item>)
                 )}
-                {/* <Nav.Item>
-                    <Nav.Link href="/home">Active</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                    <Nav.Link eventKey="link-1">Option 2</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                    <Nav.Link eventKey="disabled">
-                        Disabled
-                    </Nav.Link>
-                </Nav.Item> */}
             </Nav>
         </div>
     )
